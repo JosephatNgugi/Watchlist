@@ -16,11 +16,12 @@ def index():
     title = "Home - Welcome to The best Movie Review Website Online"
     return render_template("index.html", title=title, popular = popular_movies, upcoming = upcoming_movies, now_showing = now_showing_movie)
 
-@app.route("/movie/<int:movie_id>")
+@app.route("/movie/<movie_id>")
 def movie(movie_id):
     '''
     View movie page function that returns the movie details and
     its data
     '''
-    return render_template("movie.html", id = movie_id)
+    title = f'You are viewing {movie_id}'
+    return render_template("movie.html", title = title)
 
